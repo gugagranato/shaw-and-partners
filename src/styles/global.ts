@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import githubBackground from '../assets/github-background.svg';
+
 export default createGlobalStyle`
   * {
     margin: 0;
@@ -8,14 +10,10 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  /* body {
-    background: #312E38 url("../../assets/github.jpg");
+  body {
+    background: #312E38 url(${githubBackground}) no-repeat 70% top;
     color: #FFF;
     -webkit-font-smoothing: antialiased;
-  } */
-
- body {
-    background: lightblue url("../assets/github.jpg") no-repeat fixed center;
   }
 
   body, button, input {
