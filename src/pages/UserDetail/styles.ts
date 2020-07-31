@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: flex;
-  width: 500px;
+  width: 350px;
+  margin: 0 auto;
 `;
 
 export const Title = styled.h1`
@@ -51,4 +51,9 @@ export const WrapperDetails = styled.div`
   color: #312e38;
   /* justify-content: center;
   align-items: center; */
+`;
+
+export const TextInfo = styled.p`
+  font-size: 18px;
+  font-weight: 500;
 `;

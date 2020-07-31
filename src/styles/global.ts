@@ -8,10 +8,14 @@ export default createGlobalStyle`
     outline: 0;
   }
 
-  body {
-    background: #312E38;
+  /* body {
+    background: #312E38 url("../../assets/github.jpg");
     color: #FFF;
     -webkit-font-smoothing: antialiased;
+  } */
+
+ body {
+    background: lightblue url("../assets/github.jpg") no-repeat fixed center;
   }
 
   body, button, input {

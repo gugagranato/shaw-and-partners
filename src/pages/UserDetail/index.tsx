@@ -11,6 +11,7 @@ import {
   WrapperImg,
   Wrapper,
   WrapperDetails,
+  TextInfo,
 } from './styles';
 
 interface UserParams {
@@ -24,6 +25,8 @@ interface User {
   html_url: string;
   // eslint-disable-next-line camelcase
   created_at: string;
+  // eslint-disable-next-line camelcase
+  avatar_url: string;
 }
 
 const UserDetail: React.FC = () => {
@@ -41,25 +44,21 @@ const UserDetail: React.FC = () => {
 
   return (
     <>
-      <Title>a</Title>
+      <Title>User Details</Title>
       {user && (
         <Container>
           <Details>
             <Wrapper>
               <WrapperImg>
-                <img
-                  src="https://avatars2.githubusercontent.com/u/20743785?s=460&u=cecbd33854c50e4858e8a54f78c2e4897d2e18c0&v=4"
-                  alt="{repository.owner.login}"
-                />
+                <img src={user.avatar_url} alt={user.login} />
               </WrapperImg>
 
               <WrapperDetails>
-                <strong>{user.login}</strong>
-                <p>Login</p>
-                <p>Profile</p>
-                <p>Creation Login</p>
+                <TextInfo>{`ID: ${user.id}`}</TextInfo>
+                <TextInfo>{`Login: ${user.login}`}</TextInfo>
+                <TextInfo>{`Profile: ${user.html_url}`}</TextInfo>
+                <TextInfo>{`Creation Date: ${user.created_at}`}</TextInfo>
               </WrapperDetails>
-              <FiChevronRight size={20} />
             </Wrapper>
           </Details>
         </Container>
