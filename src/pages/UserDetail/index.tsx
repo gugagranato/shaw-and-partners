@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import { useRouteMatch } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
 import api from '../../services/api';
 
 import {
