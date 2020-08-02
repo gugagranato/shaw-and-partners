@@ -16,6 +16,7 @@ Run this project
 
 Ready! Go to [localhost:3000](localhost:3000)
 
+### This application is uploaded in [Heroku](https://shawandpartners.netlify.com)
 # Author
 
 **Gustavo Granato Silva**
