@@ -27,7 +27,6 @@ interface User {
   html_url: string;
 }
 const User: React.FC = () => {
-  const [repositories, setRepositories] = useState<Repository[]>([]);
   const [newUser, setNewUser] = useState('');
   const [users, setUsers] = useState<User[]>([]);
   // const [newRepo, setNewRepo] = useState('');
