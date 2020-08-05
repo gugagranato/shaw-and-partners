@@ -9,9 +9,9 @@ interface FormProps {
 export const Container = styled.div``;
 
 export const Title = styled.h1`
-  font-size: 28px;
-
-  color: #fffc;
+  font-size: 30px;
+  font-weight: 500;
+  color: #3d3d4d;
   max-width: 450px;
   line-height: 56px;
 
