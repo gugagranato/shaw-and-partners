@@ -55,7 +55,9 @@ const UserDetail: React.FC = () => {
               <WrapperDetails>
                 <TextInfo>{`ID: ${user.id}`}</TextInfo>
                 <TextInfo>{`Login: ${user.login}`}</TextInfo>
-                <TextInfo>{`Profile: ${user.html_url}`}</TextInfo>
+                <a href={`Profile: ${user.html_url}`}>
+                  <TextInfo>{`Profile: ${user.html_url}`}</TextInfo>
+                </a>
                 <TextInfo>{`Creation Date: ${user.created_at}`}</TextInfo>
               </WrapperDetails>
             </Wrapper>

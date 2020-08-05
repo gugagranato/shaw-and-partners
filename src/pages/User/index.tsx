@@ -28,7 +28,7 @@ interface User {
 }
 const User: React.FC = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
-  const [newRepo, setNewRepo] = useState('');
+  const [newUser, setNewUser] = useState('');
   const [users, setUsers] = useState<User[]>([]);
   // const [newRepo, setNewRepo] = useState('');
   const [inputError, setInputError] = useState('');
@@ -44,19 +44,19 @@ const User: React.FC = () => {
   ): Promise<void> {
     event.preventDefault();
 
-    if (!newRepo) {
+    if (!newUser) {
       setInputError('Digite o autor/nome do repositório');
       return;
     }
 
     try {
-      const response = await api.get(`repos/${newRepo}`);
+      const response = await api.get(`users/${newUser}`);
 
-      const repository = response.data;
-      console.log(repository);
+      const user = response.data;
+      console.log(user);
 
-      setRepositories([...repositories, repository]);
-      setNewRepo('');
+      setUsers([...users, user]);
+      setNewUser('');
       setInputError('');
     } catch (error) {
       setInputError('Erro na busca por esse repositório');
@@ -67,26 +67,23 @@ const User: React.FC = () => {
       <Title>User list</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input
-          value={newRepo}
-          onChange={e => setNewRepo(e.target.value)}
+          value={newUser}
+          onChange={e => setNewUser(e.target.value)}
           placeholder="Type user"
         />
         <button type="submit">Pesquisar</button>
       </Form>
       {inputError && <Error>{inputError}</Error>}
       <Repositories>
-        {repositories.map(repository => (
-          <a key={repository.id} href="teste">
-            <img
-              src={repository.owner.avatar_url}
-              alt={repository.owner.login}
-            />
+        {users.map(user => (
+          <Link key={user.id} to={`/detail/${user.login}`}>
+            <img src={user.avatar_url} alt={user.login} />
             <div>
-              <strong>{repository.full_name}</strong>
-              <p>{repository.description}</p>
+              <strong>{user.login}</strong>
+              <p>{user.html_url}</p>
             </div>
             <FiChevronRight size={20} />
-          </a>
+          </Link>
         ))}
         {users.map(user => (
           <Link key={user.id} to={`/detail/${user.login}`}>
