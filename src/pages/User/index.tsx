@@ -6,18 +6,6 @@ import api from '../../services/api';
 
 import { Title, Container, Form, Repositories, Error, IdUser } from './styles';
 
-interface Repository {
-  id: number;
-  // eslint-disable-next-line camelcase
-  full_name: string;
-  description: string;
-  owner: {
-    login: string;
-    // eslint-disable-next-line camelcase
-    avatar_url: string;
-  };
-}
-
 interface User {
   id: number;
   login: string;
@@ -52,7 +40,6 @@ const User: React.FC = () => {
       const response = await api.get(`users/${newUser}`);
 
       const user = response.data;
-      console.log(user);
 
       setUsers([...users, user]);
       setNewUser('');
@@ -61,6 +48,7 @@ const User: React.FC = () => {
       setInputError('Erro na busca por esse repositório');
     }
   }
+
   return (
     <Container>
       <Title>User list</Title>
