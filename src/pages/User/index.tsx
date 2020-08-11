@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi';
 import api from '../../services/api';
 
-import { Title, Container, Form, Repositories, Error, IdUser } from './styles';
+import { Title, Container, Form, Repositories, Error } from './styles';
 
 interface User {
   id: number;
@@ -71,20 +71,6 @@ const User: React.FC = () => {
             </div>
             <FiChevronRight size={20} />
           </Link>
-        ))}
-        {users.map(user => (
-          <Link key={user.id} to={`/detail/${user.login}`}>
-            <img src={user.avatar_url} alt={user.login} />
-            <div>
-              <strong>{user.login}</strong>
-              <p>{user.html_url}</p>
-            </div>
-            <IdUser>{`ID: ${user.id}`}</IdUser>
-            <FiChevronRight size={20} />
-          </Link>
-          // <article key={user.id}>
-          //   <strong>{`${user.id} - ${user.login}`}</strong>
-          // </article>
         ))}
       </Repositories>
     </Container>

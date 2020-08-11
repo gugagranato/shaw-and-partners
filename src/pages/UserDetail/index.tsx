@@ -55,9 +55,18 @@ const UserDetail: React.FC = () => {
               <WrapperDetails>
                 <TextInfo>{`ID: ${user.id}`}</TextInfo>
                 <TextInfo>{`Login: ${user.login}`}</TextInfo>
-                <a href={`Profile: ${user.html_url}`}>
-                  <TextInfo>{`Profile: ${user.html_url}`}</TextInfo>
-                </a>
+                <TextInfo
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                  }}
+                >
+                  <h4 style={{ marginRight: '2px' }}>Profile:</h4>
+
+                  <a href={user.html_url}>{user.html_url}</a>
+                </TextInfo>
+
                 <TextInfo>{`Creation Date: ${user.created_at}`}</TextInfo>
               </WrapperDetails>
             </Wrapper>
