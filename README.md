@@ -4,7 +4,7 @@
 
 Clone este repositório
 
-```git clone https://github.com/gugagranato/guide.git```
+```git clone https://github.com/gugagranato/shaw-and-partners.git```
 
 Install dependencies
 
